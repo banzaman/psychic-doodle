@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import './index.css';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Resume from './components/Resume';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className={`container ${darkMode ? 'dark-mode' : ''}`}>
+        <div className="logo">
+          <img src="logo.png" alt="Logo" width="40" height="40" />
+        </div>
+        <div className="menu">
+          <ul>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/projects">Projects</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link to="/resume">Resume</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="content">
+          <Route path="/about" component={About} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/resume" component={Resume} />
+        </div>
+        <div className="dark-mode-toggle" onClick={toggleDarkMode}>
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
