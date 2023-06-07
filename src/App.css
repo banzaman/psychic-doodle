@@ -1,52 +1,81 @@
+/* App.css */
+body {
+  background-color: #0a192f;
+  color: #fff;
+}
+
+.navbar {
+  background-color: #0a192f !important;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
+.nav-link:hover {
+  color: #ffc000 !important;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+  color: #ffc000;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.icon {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+aside {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.form-label {
+  color: #ffc000;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  background-color: transparent;
+  border-color: #ffc000;
+  color: #fff;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+.btn-primary {
+  background-color: #ffc000;
+  border-color: #ffc000;
+}
+
+.btn-primary:hover {
+  background-color: #e6ac00;
+  border-color: #e6ac00;
+}
+
 .container {
   max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.menu {
-  margin-bottom: 20px;
-}
-
-.menu ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu li {
-  display: inline;
-  margin-right: 10px;
-}
-
-.menu li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.section {
-  padding: 40px 0;
-  color: #fff;
-}
-
-.section h2 {
-  margin-top: 0;
-}
-
-.App {
-  text-align: center;
-  padding: 20px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #0a192f;
-}
-
-.content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  color: #333;
 }
